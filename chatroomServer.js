@@ -22,7 +22,25 @@ server.on("connection", function(ws) {
 
   ws.on("message",function(message) {
     history.push(message);
-    ws.send(message);
+
+    clients.forEach(function(client) {
+
+      if (client !== ws ) {
+        client.send(message);
+      }
+    })
+
+    console.log(message);
+
+    var pars = JSON.parse(message);
+    var printParse = pars.userMessage;
+    console.log(printParse);
+    if ( printParse === "like" || printParse === "super") {
+      ws.send("Sorry, that word is not allowed");
+      console.log("they used a bad word");
+      ws.close();
+    }
+
   })
 
   ws.on("close",function() {
