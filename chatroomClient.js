@@ -4,6 +4,7 @@ var userName = prompt("Please pick a wonderful username to chat with!");
 
 var body=document.querySelector("body");
 
+
 var ul=document.createElement("ul");
 body.appendChild(ul);
 

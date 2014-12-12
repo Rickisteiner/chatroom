@@ -4,7 +4,7 @@ var clients = [];
 var history = [];
 
 server.on("connection", function(ws) {
-
+  
   if (history.length>0) {
     history.forEach(function(x) {
       ws.send(x);
