@@ -15,7 +15,7 @@ server.on("connection", function(ws) {
 
   clients.forEach(function(client)
   {
-    var serverMessage = {name: "server", userMessage: "connected!"}
+    var serverMessage = {name: "user", userMessage: "connected!"}
     var j_serverMessage = JSON.stringify(serverMessage);
     client.send(j_serverMessage);
   })
@@ -40,7 +40,7 @@ server.on("connection", function(ws) {
     //console.log(printParse);
 
     if ( printParse === "like" || printParse === "super") {
-      var serverMessage = {name: userName, userMessage: "Sorry, that word is not allowed"}
+      var serverMessage = {name: "server", userMessage: "Sorry, that word is not allowed"}
       var j_serverMessage = JSON.stringify(serverMessage);
       ws.send(j_serverMessage);
       console.log("they used a bad word");

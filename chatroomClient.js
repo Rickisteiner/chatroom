@@ -2,8 +2,9 @@ var ws = new WebSocket("ws://localhost:3000");
 
 var userName = prompt("Please pick a wonderful username to chat with!");
 
-var body=document.querySelector("body");
+var userColor = prompt("Please pick an awesome color!");
 
+var body=document.querySelector("body");
 
 var ul=document.createElement("ul");
 body.appendChild(ul);
@@ -11,12 +12,15 @@ body.appendChild(ul);
 var input=document.querySelector("input");
 var button=document.querySelector("button");
 
+
 var addText = function(msg) {
 
   var newLi = document.createElement("li");
 
   var pars = JSON.parse(msg);
   var printParse = pars.name + " : " + pars.userMessage;
+
+  newLi.style.color = pars.color;
 
   newLi.innerHTML=printParse;
   console.log(newLi);
@@ -36,7 +40,7 @@ ws.addEventListener("message", function(evt) {
 
 button.addEventListener("click", function(evt) {
 
-  var user = {name: userName, userMessage: input.value};
+  var user = {name: userName, userMessage: input.value, color: userColor};
   var userInfo = JSON.stringify(user);
 
   console.log(user.userMessage);
@@ -51,7 +55,7 @@ input.addEventListener("keydown", function(evt) {
   if (evt.keyCode === 13 ){
     var text=input.value;
 
-    var user = {name: userName, userMessage: input.value};
+    var user = {name: userName, userMessage: input.value, color: userColor};
     var userInfo = JSON.stringify(user);
 
     ws.send(userInfo);
