@@ -1,0 +1,34 @@
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #275466;
+}
+
+h1 {
+  color: white;
+  font-family: sans-serif;
+  margin-top: 30px;
+}
+
+h4 {
+  color: white;
+  font-family: sans-serif;
+}
+
+li {
+  color: white;
+  font-family: sans-serif;
+  margin-left: 37px;
+  margin-top: 10px;
+}
+
+button {
+  font-family: sans-serif;
+  margin-top: 10px;
+}
+
+input {
+  margin-top: 10px;
+}
