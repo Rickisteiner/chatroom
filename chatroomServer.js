@@ -4,7 +4,7 @@ var clients = [];
 var history = [];
 
 server.on("connection", function(ws) {
-  
+
   if (history.length>0) {
     history.forEach(function(x) {
       ws.send(x);
@@ -15,7 +15,9 @@ server.on("connection", function(ws) {
 
   clients.forEach(function(client)
   {
-    client.send("connected!");
+    var serverMessage = {name: "server", userMessage: "connected!"}
+    var j_serverMessage = JSON.stringify(serverMessage);
+    client.send(j_serverMessage);
   })
 
   console.log(clients.length + " clients are in the room");
@@ -34,9 +36,13 @@ server.on("connection", function(ws) {
 
     var pars = JSON.parse(message);
     var printParse = pars.userMessage;
-    console.log(printParse);
+
+    //console.log(printParse);
+
     if ( printParse === "like" || printParse === "super") {
-      ws.send("Sorry, that word is not allowed");
+      var serverMessage = {name: userName, userMessage: "Sorry, that word is not allowed"}
+      var j_serverMessage = JSON.stringify(serverMessage);
+      ws.send(j_serverMessage);
       console.log("they used a bad word");
       ws.close();
     }
