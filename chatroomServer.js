@@ -39,19 +39,9 @@ server.on("connection", function(ws) {
 
     //console.log(printParse);
 
-    //var bannedWords = ["like", "super", "totally", "jelly"];
-
-     //bannedWords.forEach(function(x) {
-       //if ( printParse === bannedWords){
-         //var serverMessage = {name: "server", userMessage: "Sorry, that word is not allowed"}
-         //var j_serverMessage = JSON.stringify(serverMessage);
-          //ws.send(j_serverMessage);
-          //console.log("they used a bad word");
-          //ws.close();
-       //}
-     //})
-
-    if ( printParse === "like" || printParse === "super") {
+    var arr = printParse.split(" ");
+    console.log(message);
+    if(arr.indexOf("like") > -1 || arr.indexOf("super") > -1 || arr.indexOf("totally") > -1 || arr.indexOf("jelly") > -1) {
       var serverMessage = {name: "server", userMessage: "Sorry, that word is not allowed"}
       var j_serverMessage = JSON.stringify(serverMessage);
       ws.send(j_serverMessage);
