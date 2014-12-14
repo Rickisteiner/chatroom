@@ -4,12 +4,23 @@ ul {
 
 body {
   background-color: #275466;
+  width: 1100px;
+  height: 1100px;
+  margin: 0px auto;
+}
+
+#logo {
+  width: 1100px;
+  height: 150px;
+  margin: 0px auto;
+  margin-top: 10px;
 }
 
 h1 {
   color: white;
   font-family: sans-serif;
   margin-top: 30px;
+  margin-left: 40px;
 }
 
 h4 {
@@ -26,9 +37,31 @@ li {
 
 button {
   font-family: sans-serif;
-  margin-top: 10px;
+  margin-left: 20px;
+  width: 50px;
+  height: 30px;
+  color: white;
+  font-family: sans-serif;
+  background-color: rgba(0,0,0,0.3);
+  border-color:rgba(0,0,0,0.2);
 }
 
 input {
   margin-top: 10px;
+  width: 1025px;
+  height: 50px;
+  background-color: rgba(0,0,0,0.3);
+  border-color:rgba(0,0,0,0.2);
+  color: white;
+}
+
+ul {
+  border-style: solid;
+  border-color:rgba(0,0,0,0.2);
+  border-size: 5px;
+  width: 1060px;
+  height: 500px;
+  background-color: rgba(0,0,0,0.3);
+  overflow: scroll;
+  padding-bottom: 10px;
 }

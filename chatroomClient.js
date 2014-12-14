@@ -27,6 +27,7 @@ var addText = function(msg) {
 
   var firstLi = ul.firstChild;
   ul.insertBefore(newLi,firstLi);
+  ul.scrollTop = ul.scrollHeight;
 }
 
 ws.addEventListener("open", function(evt) {
@@ -36,6 +37,7 @@ ws.addEventListener("open", function(evt) {
 ws.addEventListener("message", function(evt) {
   addText(evt.data)
   console.log(evt.data);
+
 });
 
 button.addEventListener("click", function(evt) {
