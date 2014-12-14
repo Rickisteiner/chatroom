@@ -40,7 +40,9 @@ server.on("connection", function(ws) {
     //console.log(printParse);
 
     var arr = printParse.split(" ");
+
     console.log(message);
+
     if(arr.indexOf("like") > -1 || arr.indexOf("super") > -1 || arr.indexOf("totally") > -1 || arr.indexOf("jelly") > -1) {
       var serverMessage = {name: "server", userMessage: "Sorry, that word is not allowed"}
       var j_serverMessage = JSON.stringify(serverMessage);
@@ -48,6 +50,13 @@ server.on("connection", function(ws) {
       console.log("they used a bad word");
       ws.close();
     }
+
+    /*else if (printParse === "(table flip)") {
+
+      var user = {name: userName, userMessage: input.value, color: userColor};
+      var userInfo = JSON.stringify("(╯°□°）╯︵ ┻━┻");
+      ws.send(userInfo);
+    }*/
 
   })
 
