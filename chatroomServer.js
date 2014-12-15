@@ -1,5 +1,5 @@
 var Websocket = require("ws").Server;
-var server = new Websocket({port:3000});
+var server = new Websocket({port:8080});
 var clients = [];
 var history = [];
 
