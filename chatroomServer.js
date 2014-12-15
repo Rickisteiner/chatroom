@@ -51,12 +51,7 @@ server.on("connection", function(ws) {
       ws.close();
     }
 
-    /*else if (printParse === "(table flip)") {
-
-      var user = {name: userName, userMessage: input.value, color: userColor};
-      var userInfo = JSON.stringify("(╯°□°）╯︵ ┻━┻");
-      ws.send(userInfo);
-    }*/
+    ("(╯°□°）╯︵ ┻━┻")
 
   })
 
