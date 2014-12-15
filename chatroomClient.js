@@ -1,4 +1,4 @@
-var ws = new WebSocket("ws://localhost:3000");
+var ws = new WebSocket("ws://ricki.princesspeach.nyc:8080");
 
 var userName = prompt("Please pick a wonderful username to chat with!");
 
